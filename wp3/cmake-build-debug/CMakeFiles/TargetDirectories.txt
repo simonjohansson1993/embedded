@@ -1,0 +1,3 @@
+C:/Users/simon.simon/CLionProjects/wp3/cmake-build-debug/CMakeFiles/wp3.dir
+C:/Users/simon.simon/CLionProjects/wp3/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/simon.simon/CLionProjects/wp3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
