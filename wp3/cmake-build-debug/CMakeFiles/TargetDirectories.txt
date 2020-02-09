@@ -1,3 +1,0 @@
-/cygdrive/c/Users/tobbe/Temp/embedded/wp3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/c/Users/tobbe/Temp/embedded/wp3/cmake-build-debug/CMakeFiles/wp3.dir
-/cygdrive/c/Users/tobbe/Temp/embedded/wp3/cmake-build-debug/CMakeFiles/edit_cache.dir
