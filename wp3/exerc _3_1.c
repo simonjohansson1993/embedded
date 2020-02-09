@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 enum DIRECTION {N,O,S,W};
 typedef struct {
     int xPos;
@@ -14,6 +15,7 @@ robot rob;
 
 char inputPos[100];
 char inputDirection[100];
+char userVal[6];
 void readPos();
 void move(robot*robot1);
 void turn(robot*robot1);
@@ -27,25 +29,32 @@ int main(){
     rob.dir = N;
 
     printf("------------Hello friend-------------\n");
-    printf("Robot: Give me a starting position (x. y)\n");
-    do {
-       readPos();
+    while (true) {
+        do {
 
-    } while (xValue > 99||xValue < 0);
+            readPos();
 
-    printf("Robot: Give me directions (m = move, t = turn), my default direction is North\n");
+        } while (xValue > 99 || xValue < 0);
 
-    memset(inputDirection,0, sizeof(inputPos));
-    fgets(inputDirection, 100, stdin);
-    for (i = 0; inputDirection[i] != '\0'; ++i){
-        if ((int)inputDirection[i]==116){
-            turn(rob_ptr);
+        printf("Robot: Give me directions (m = move, t = turn)\n");
+
+        memset(inputDirection, 0, sizeof(inputPos));
+        fgets(inputDirection, 100, stdin);
+        for (i = 0; inputDirection[i] != '\0'; ++i) {
+            if ((int) inputDirection[i] == 116) {
+                turn(rob_ptr);
+            } else if ((int) inputDirection[i] == 109) {
+                move(rob_ptr);
+            }
         }
-        else if((int)inputDirection[i]==109){
-            move(rob_ptr);
+        printf("Robot: My new position is x: %d, y: %d\n", rob.xPos, rob.yPos);
+        printf("\ntype any key to continue or exit to quit\n");
+        gets(userVal);
+        if (strcmp(userVal,"exit") == 0){
+            break ;
         }
+
     }
-    printf("Robot: My new position is x: %d, y: %d",rob.xPos,rob.yPos);
 }
 void move (robot*robot1){
     int direction = robot1->dir;
@@ -69,7 +78,7 @@ void readPos() {
     int i = 0;
     int status= 0;
 
-
+    printf("Robot: Give me a starting position (x. y)\n");
     memset(inputPos, 0, sizeof(inputPos));
     fgets(inputPos, 6, stdin);
 
@@ -105,3 +114,4 @@ void turn(robot*robot1){
     direction++;
     robot1->dir = direction;
 }
+
