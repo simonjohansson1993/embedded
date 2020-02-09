@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/wp3.dir/exerc__3_1.c.obj"
+  "CMakeFiles/wp3.dir/exerc__3_1.c.o"
   "libwp3.dll.a"
   "wp3.exe"
-  "wp3.exe.manifest"
   "wp3.pdb"
 )
 

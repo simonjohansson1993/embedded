@@ -1,3 +1,1 @@
-"C:\Program Files\JetBrains\CLion 2019.3.3\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\wp3.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\wp3.dir/objects.a @CMakeFiles\wp3.dir\objects1.rsp
-C:\MinGW\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\wp3.dir/objects.a -Wl,--no-whole-archive  -o wp3.exe -Wl,--out-implib,libwp3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\wp3.dir\linklibs.rsp
+/usr/bin/cc -g  -Wl,--enable-auto-import CMakeFiles/wp3.dir/exerc__3_1.c.o  -o wp3.exe -Wl,--out-implib,libwp3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

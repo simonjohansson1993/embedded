@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/simon.simon/CLionProjects/wp3/exerc _3_1.c" "C:/Users/simon.simon/CLionProjects/wp3/cmake-build-debug/CMakeFiles/wp3.dir/exerc__3_1.c.obj"
+  "/cygdrive/c/Users/tobbe/Temp/embedded/wp3/exerc _3_1.c" "/cygdrive/c/Users/tobbe/Temp/embedded/wp3/cmake-build-debug/CMakeFiles/wp3.dir/exerc__3_1.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
