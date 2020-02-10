@@ -35,7 +35,6 @@ int main() {
     for (int i = 0; i < 10 ; ++i) {
         printf("%d,", test[i]);
     }
-
     return 0;
 }
 void sort(int number, int tab[]){
