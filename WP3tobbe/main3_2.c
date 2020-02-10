@@ -1,19 +1,36 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int search_number( int number, int tab[], int size);
 void sort (int number, int tab []);
-
+void clear_stdin()
+{
+    while( getchar() != '\n' ){
+        ;
+    }
+}
 
 int main() {
 
+    int number = 0;
     int test [] = { 1,2,34,5,67,3,23,12,13,10};
     for (int i = 0; i < 10 ; ++i) {
         printf("%d,", test[i]);
     }
-    int number = search_number(67, test, 11);
     puts("");
-    printf("%d\n", number);
-    puts("after sort:");
+    while (true) {
+        puts("Enter a number to search for in the array:");
+        if ((scanf("%d", &number) == 0 )){
+            puts("Input must be an integer");
+            clear_stdin();
+        } else {
+            break;
+        }
+    }
+    number = search_number(number, test, 11);
+    puts("");
+    printf("your number is in position %d in the array\n", number);
+    puts("the array affter sorting:");
     sort(10, test);
     for (int i = 0; i < 10 ; ++i) {
         printf("%d,", test[i]);
