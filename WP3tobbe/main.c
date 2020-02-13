@@ -41,7 +41,6 @@ void turn(ROBOT *robot){
     } else{
         robot->dir++;
     }
-    robot->dir++;
     int direction = robot->dir;
     switch (direction){
         case 0:
@@ -65,7 +64,7 @@ void readStartingPos(ROBOT *robot){
     int yValue = 0;
 
     while (true) {
-        puts("Enter an X value (1-99):");
+        puts("Enter an X value (0-99):");
         if ((scanf("%d", &xValue) == 0 )){
             puts("Input must be an integer");
             clear_stdin();
@@ -74,14 +73,14 @@ void readStartingPos(ROBOT *robot){
                 robot->xpos = xValue;
                 break;
             } else {
-                puts("input must be between 1-99");
+                puts("input must be between 0-99");
                 clear_stdin();
             }
         }
     }
     clear_stdin();
     while (true) {
-        puts("Enter a Y value (1-99):");
+        puts("Enter a Y value (0-99):");
         if ((scanf("%d", &yValue) == 0)){
             puts("Input must be an integer");
             clear_stdin();
@@ -91,7 +90,7 @@ void readStartingPos(ROBOT *robot){
                 robot->ypos = yValue;
                 break;
             } else {
-                puts("input must be between 1-99");
+                puts("input must be between 0-99");
                 clear_stdin();
             }
         }
@@ -99,6 +98,8 @@ void readStartingPos(ROBOT *robot){
 }
 
 int main() {
+
+    //22865
     ROBOT robot;
     robot.xpos = 0;
     robot.ypos = 0;
@@ -139,6 +140,5 @@ int main() {
         }
         clear_stdin();
     }
-
     return 0;
 }
