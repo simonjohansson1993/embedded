@@ -93,7 +93,10 @@ int main() {
         if (elevatorStatus == 1){
             closeDoor();
         }
-        set_control(0)
+        //if door i closed, reset control register.
+        if (elevatorStatus == 2){
+            set_control(0)
+        }
 
 
     }
