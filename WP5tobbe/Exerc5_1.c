@@ -1,5 +1,20 @@
 #include <avr/io.h>
 #include <util/delay.h>
+/* ====================================
+*File name: exerc_5_1.c
+*Date: 2020-02-27
+*Group nr 16
+*Members that contribute to the solutions
+*Simon Johansson
+*Armin Ghoroghi
+*Tobias Banck
+*
+*Member not present at demonstration time:
+*
+*Demonstration code: 22390
+*!====================================== *
+*
+*/
 
 bool keyHit = false;
 int col;
