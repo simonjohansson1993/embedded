@@ -58,21 +58,21 @@ int checkDoorstatus(){
     //read the current status
     int status = read_control;
     //if status is 10000000, door is closing.
-    if ((status) % (1 << 7) == 128){
+    if ((status) & (1 << 7) == 128){
         return 4;
     }
     //if status is 01000000, door is opening slowly
-    else if ((status) % (1 << 6) == 64){
+    else if ((status) & (1 << 6) == 64){
         return 3;
 
     }
     //if status is 00100000, door is closed.
-    else if ((status) % (1 << 5) == 32){
+    else if ((status) & (1 << 5) == 32){
         return 2;
 
     }
     //if status is 00010000, door is wide open.
-    else if ((status) % (1 << 4) == 16) {
+    else if ((status) & (1 << 4) == 16) {
         return 1;
     }
 
