@@ -4,7 +4,7 @@
 #define read_control *(char*)ML13_status
 #define set_control(x) *(char*)ML13_control
 
-int elevatorStatus = 0;
+int doorStatus = 0;
 int control = 0;
 int RISING = 1;
 
@@ -33,17 +33,17 @@ void closeDoor(){
 void interruptML13(){
 
     //if door is closing, open it immediately
-    if (elevatorStatus == 4){
+    if (doorStatus == 4){
         // writes to the control port address, 1 for opening, 2 for closing (00000001, 00000010)
         openDoor();
 
     }
     //if door is opening, extend the delay
-    else if (elevatorStatus == 3){
+    else if (doorStatus == 3){
         delay();
     }
     //if door is closed, open it
-    else if (elevatorStatus == 2){
+    else if (doorStatus == 2){
         openDoor();
     }
     //if door is open, extend the delay
@@ -54,7 +54,7 @@ void interruptML13(){
 
 
 }
-int checkElevatorstatus(){
+int checkDoorstatus(){
     //read the current status
     int status = read_control;
     //if status is 10000000, door is closing.
@@ -88,13 +88,13 @@ int main() {
 
     //Main loop tries to continuously close the door, interrupt service routine opens door.
     while(1){
-        elevatorStatus = checkElevatorstatus();
+        doorStatus = checkDoorstatus();
         //if door is wide open, close it (interrupt service routine takes care of the delay so that it doesn't close immediately)
-        if (elevatorStatus == 1){
+        if (doorStatus == 1){
             closeDoor();
         }
         //if door i closed, reset control register.
-        if (elevatorStatus == 2){
+        if (doorStatus == 2){
             set_control(0)
         }
 
