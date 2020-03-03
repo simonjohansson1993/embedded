@@ -93,10 +93,7 @@ int main() {
         if (doorStatus == 1){
             closeDoor();
         }
-        //if door i closed, reset control register.
-        if (doorStatus == 2){
-            set_control(0)
-        }
+        
 
 
     }
