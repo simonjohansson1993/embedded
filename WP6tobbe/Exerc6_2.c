@@ -20,8 +20,7 @@ int main() {
     pthread_t t2;
     pthread_t t3;
 	pthread_attr_t attr;
-    pthread_attr_t attr2;
-    pthread_attr_t attr3;
+    
 
 	srand((unsigned) time(&t));
 	pthread_attr_init(&attr);
