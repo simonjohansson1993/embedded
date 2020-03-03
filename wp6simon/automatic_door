@@ -1,0 +1,39 @@
+#define ML13_Status 0x0B10
+#define ML13_Control 0x0B00
+#define read_status * (char*) ML13_Status
+#define set_control(x) *(char*) ML13_Control = x
+#define open_door 16 //0001 0000 open door and no sensor activated
+#define person_close_while_door_closing 136 //8 + 128 = sensor activated + door is closing
+#define person_close_while_door_closed 40 //8+32 = sensor activated + door is closed
+
+void open();
+void delay();
+//---------------START OF MAIN-------------------------
+int main() {
+
+    while (1) {
+        //check if sensor detects a person when door is either closed or closing
+        if (read_status == person_close_while_door_closed) {
+            open();
+        } else if (read_status == person_close_while_door_closing) {
+            open();
+
+            //check if door is open -> start closing
+        } else if (read_status == open_door) {
+            const char close = 0x02;
+            set_control(close);
+            //no delay when closing if sensor reads a person again
+        }
+    }
+}
+//--------------END OF MAIN---------------------------
+
+void delay() {
+    for (int i = 0; i < 5000; i++);
+}
+
+void open() {
+    const char open = 0x01;
+    set_control(open); //0000 0001 -> door is open
+    delay();
+}
