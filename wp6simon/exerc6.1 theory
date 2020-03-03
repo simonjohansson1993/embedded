@@ -5,7 +5,7 @@ Line 16: pthread_t tid: declares at storage on the stack named "tid"
 
 Line 17: pthread_attr_t attr; declare the threads reference "attr" to point to the threads attributes
 
-Line 20: pthread_attr_init(&attr):This line initilises a thread attribute object (attr). It will give default values for the attributes.
+Line 20: pthread_attr_init(&attr):This line initilises a thread attribute (attr). It will give default values for the attributes.
 
 Line 25: pthread_create(&tid, &attr, runner, NULL); This line creates a new thread with the attributes from &attr which in this case is the default attributes. 
 The thread created will be executing runner as a start routine with NULL arguments.
