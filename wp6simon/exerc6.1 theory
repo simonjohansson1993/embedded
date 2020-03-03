@@ -15,5 +15,5 @@ Null is that we dont care about any return value of the function.
 
 3) NULL parameters are passed to the function runner. 
 4) Global variable has a global scope and can be used within any function. 
-5) the program can have problem running accordingly since the thread's execution might not have been finnished before the man thread is complete. 
+5) join: the program can have problem running accordingly since the thread's execution might not have been finnished before the man thread is complete. 
 When you use the join method in main it's gonna wait for the targeted thread to finnish before moving on. 
