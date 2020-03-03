@@ -1,0 +1,19 @@
+1) pthread_create(&tid, &attr, runner, NULL); //creating a thread with default attributes. The program executes 1 thread.
+
+2)
+Line 16: pthread_t tid: declares at storage on the stack named "tid"   
+
+Line 17: pthread_attr_t attr; declare the threads reference "attr" to point to the threads attributes
+
+Line 20: pthread_attr_init(&attr):This line initilises a thread attribute object (attr). It will give default values for the attributes.
+
+Line 25: pthread_create(&tid, &attr, runner, NULL); This line creates a new thread with the attributes from &attr which in this case is the default attributes. 
+The thread created will be executing runner as a start routine with NULL arguments.
+
+Line 26: pthread_join(tid, NULL); This line will cancel the execution of the calling thread "tid", exception if the target thread already is terminated. 
+Null is that we dont care about any return value of the function.
+
+3) NULL parameters are passed to the function runner. 
+4) Global variable has a global scope and can be used within any function. 
+5) the program can have problem running accordingly since the thread's execution might not have been finnished before the man thread is complete. 
+When you use the join method in main it's gonna wait for the targeted thread to finnish before moving on. 
