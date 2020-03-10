@@ -1,7 +1,7 @@
 1) pthread_create(&tid, &attr, runner, NULL); //creating a thread with default attributes. The program executes 1 thread.
 
 2)
-Line 16: pthread_t tid: declares at storage on the stack a thread named "tid".  
+Line 16: pthread_t tid: declares at storage on the stack a thread named "tid". Creates an ide and a thread named "tid".  
 
 Line 17: pthread_attr_t attr; declares "attr" to point to the threads attributes
 
